@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Complex Trig</title>
+        <style>
+            canvas, body {
+                margin: 0px;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="gpu"></canvas>
+        <canvas id="cpu"></canvas>
+    </body>
+    <script>
+        const canvases = document.getElementsByTagName("canvas")
+        for (let i = 0; i < canvases.length; i++) {
+            canvases[i].width = window.innerWidth
+            canvases[i].height = window.innerHeight
+            canvases[i].style.width = `${canvases[i].width}px`
+            canvases[i].style.height = `${canvases[i].height}px`
+        }
+        // I *would* uncomment this... except I don't wanna make the canvas have a dynamic size.
+        // window.addEventListener("resize", () => { canvas.height = window.innerHeight, canvas.width = window.innerWidth })
+    </script>
+    <script charset="utf-8" src="gpu-browser.min.js"></script>
+    <script src="index.js"></script>
+</html>
